@@ -16,7 +16,7 @@ print("Starting bot...")
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 
-#keep_alive()
+keep_alive()
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 intents = discord.Intents.default()
@@ -111,4 +111,5 @@ async def ACT(ctx, *, question):
     except Exception as e:
         await ctx.send(f"An error occurred: {str(e)}")
         print(f"Error: {e}")
+
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
